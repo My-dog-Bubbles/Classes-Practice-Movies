@@ -31,18 +31,21 @@ let myMovie = new Movies('nine',['Daniel Day-Lewis','Marion Cotillard','Penelope
 // Display the initial information of the movie
 myMovie.display()
 
-let movies = [myMovie]
 
+let movies = [myMovie]
+console.log(myMovie.title)
 // Update the rating of the movie
 function updateMovieRating(title,newRating){
   for(key in movies){
-    if(key.title==title){
-      myMovie.addRating(80)
+    if(String(key.title)==String(title)){
+      myMovie.addRating(newRating)
+    } else{
+      console.log('no match found')
     }
   }
 
 }
 
 // Display the updated information of the movie
-myMovie.updateMovieRating('nine',80)
+updateMovieRating('nine',80)
 myMovie.display()
