@@ -34,10 +34,12 @@ myMovie.display()
 
 let movies = [myMovie]
 console.log(myMovie.title)
+
 // Update the rating of the movie
 function updateMovieRating(title,newRating){
   for(key in movies){
-    if(String(key.title)==String(title)){
+    console.log(movies[key].title)
+    if(movies[key].title==title){
       myMovie.addRating(newRating)
     } else{
       console.log('no match found')
